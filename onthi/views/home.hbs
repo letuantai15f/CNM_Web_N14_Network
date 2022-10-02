@@ -1,0 +1,30 @@
+<div>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="text" name="maBao" placeholder="id">
+        <input type="text" name="tenbao" placeholder="tenbao">
+        <input type="text" name="tentacgia" placeholder="tentacgia">
+        <input type="submit" value="submit">
+    </form>
+    <div>
+        <table>
+            <tr>
+                <td>maBao</td>
+                <td>tenbao</td>
+                <td>tentacgia</td>
+                <td>hanhdong</td>
+            </tr>
+            {{#each sanPham}} 
+                <tr>
+                    <td>{{maBao}}</td>
+                    <td>{{tenbao}}</td>
+                    <td>{{tentacgia}}</td>
+                    <td><form id="delete" action="/del" method="post" enctype="multipart/form-data">
+                        <input type="checkbox"name="{{maBao}}">
+                        <input type="submit"  value="delte">
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
